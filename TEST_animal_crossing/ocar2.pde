@@ -14,7 +14,7 @@ class ocar2 {
     xpos = x;
     ypos = y;
     yspeed = s;
-   // pre_pause_speed  = 0;
+   float pre_pause_speed  = 0;
     
 boolean redd;
 boolean yellow;
@@ -44,7 +44,7 @@ boolean greenn;
 }
 
 
-/*void ppause() 
+void ppause() 
 {
 if (speed_x == 0 && speed_y == 0) {
 speed_x = pre_pause_speed[0];
@@ -57,6 +57,6 @@ pre_pause_speed[1] = speed_y;
 speed_x = 0;
 speed_y = 0;
 }
-} */
+} 
 
 

@@ -50,9 +50,11 @@ PImage fired;
 
 
 int partCount = 1;
-
 int restart;
 int ppause;
+
+
+float pre_pause_speed = 0;
 
 
 Minim minim;
@@ -182,7 +184,7 @@ void part2() {
   image(road, 0, 0);
   
   
- /* if (arduino.digitalRead(10)==Arduino.LOW){
+ if (arduino.digitalRead(10)==Arduino.LOW){
   redd = true;
   }
   
@@ -190,44 +192,38 @@ void part2() {
  redd = false;
  }
  
+ 
+ if (greenn  == true && yellow == true){
+	redd = true;
 
-if (redd==true) {
-  greenn =true;
-  yellow = true;
-//ocar2Array.ppause();
+
+ocar2Array.ppause();
 arduino.digitalWrite(6, Arduino.LOW);
   
 }
 
 else {
-greenn = false;
-yellow = false; 
+redd = false;
 arduino.digitalWrite (6, Arduino.HIGH);
 }
-*/
-
-
-
 
 
 
 
 if (arduino.digitalRead(10)==Arduino.LOW){
   arduino.digitalWrite(6, Arduino.LOW);
-    ocar2Array.toggle_pause();
-  ocar2Array.yellow = false;
-  ocar2Array.greenn = false;
-  ocar2Array.redd = true;
   
   }
   
    else {
  arduino.digitalWrite (6, Arduino.HIGH);
-  ocar2Array.yellow = true;
-  ocar2Array.greenn = true;
  }
 
 
+
+
+
+//=====================================================================
 
 
 
@@ -428,7 +424,7 @@ void part3() {
 
 
 
-/*void ppause() 
+void ppause() 
 {
 if (speed_x == 0 && speed_y == 0) {
 speed_x = pre_pause_speed[0];
@@ -441,7 +437,7 @@ speed_x = 0;
 speed_y = 0;
 }
 }
-*/
+
 
 
 /*void is_in_start_position() {
